@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cairo+Play:wght@200..1000&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fredericka+the+Great&family=Love+Ya+Like+A+Sister&family=Poiret+One&display=swap');
+
+/* font-family: "Fredericka the Great", serif; */
+/*  font-family: "Poiret One", sans-serif; */
+/* font-family: "Bungee Spice", sans-serif; */
+/* font-family: "Cairo Play", sans-serif; */
+/* font-family: "Love Ya Like A Sister", cursive; */
+/* font-family: "Comic Neue", cursive; */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* General Styling */
+body {
+    background-color: #5e5e5e;
+    background-attachment: fixed;
+    font-family: 'Georgia', serif;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background image and opacity */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/Ben10_classic_wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.25;
+    /* Control the opacity here */
+    z-index: -1;
+}
+
+.bodyContainer {
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* .bgImage {
+    opacity: 0.1;
+    overflow: hidden;
+} */
+
+
+header {
+    /* background: rgb(75, 110, 75); */
+    background: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+    /* margin-top: -1204px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header h1 {
+    font-family: "Bungee Spice", sans-serif;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 400px;
+}
+
+header .logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0px 50px;
+}
+
+header .omnitrix-logo {
+    height: 110px;
+    margin: 0 10px;
+}
+
+header .dial {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+header .dial span {
+    font-family: "Comic Neue", cursive;
+    color: #24b8c8;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+header .dial a {
+    font-family: "Comic Neue", cursive;
+    color: #24b8c8;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+header .dial a:hover {
+    color: #FFFFFF;
+    font-size: 32px;
+}
+
+/* Highlight effect for the slider */
+.highlight {
+    border: 5px solid #ffdf00;
+    animation: highlightAnimation 1s 2;
+}
+
+@keyframes highlightAnimation {
+    0% {
+        border-color: gold;
+    }
+
+    50% {
+        border-color: black;
+    }
+
+    100% {
+        border-color: gold;
+    }
+}
+
+.switch-btn {
+    background-color: transparent;
+    border: none;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+.left-btn {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #28cdaf;
+    margin-right: 10px;
+}
+
+.right-btn {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #28cdaf;
+    margin-left: 10px;
+}
+
+.switch-btn:hover {
+    border-color: rgb(12, 62, 12);
+}
+
+/* Logo rotation animations */
+@keyframes rotateRight {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.rotate-logo-right {
+    animation: rotateRight 0.5s forwards;
+}
+
+.rotate-logo-left {
+    animation: rotateLeft 0.5s forwards;
+}
+
+
+.homeContainer {
+    font-family: "Comic Neue", cursive;
+    font-size: 20px;
+    line-height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    background: rgb(54, 8, 8, 0.76);
+    width: 100vw;
+    z-index: -1;
+}
+
+.homeContainer img {
+    /* height: 400px; */
+    height: 50vh;
+    transform: translate(0vw);
+    animation: introSlide1 2s ease-in-out 0.5s 1;
+}
+
+.introContainer {
+    display: block;
+    align-content: center;
+    transform: translate(0vw);
+    animation: introSlide2 2s ease-in-out 0.5s 1;
+    width: 68vw;
+}
+
+@keyframes introSlide1 {
+    0% {
+        transform: translate(100vw);
+    }
+
+    100% {
+        transform: translate(0vw);
+    }
+}
+
+.introContainer p {
+    padding: 0 30px;
+}
+
+main h2 {
+    margin: 10px;
+    color: aqua;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+
+.introContainer {
+    animation: zoomIn 1.5s 0.75s reverse;
+    opacity: 1;
+}
+
+.introContent {
+    padding: 0 30px;
+    color: beige;
+    margin-left: -90px;
+}
+
+.introContent p {
+    font-size: 24px;
+    line-height: 38px;
+}
+
+.introContainer h2 {
+    margin-top: -45px;
+    margin-left: -75px;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.sliderIntro h2 {
+    font-family: "Cairo Play", sans-serif;
+    background: rgb(95, 40, 50);
+    color: azure;
+    margin: 0 0 1px;
+    padding: 20px;
+}
+
+.slideBorder {
+    margin: 5px 30px;
+    border: 5px solid #11ad11;
+}
+
+.slider {
+    background: #423333;
+    display: flex;
+    justify-content: center;
+    height: 440px;
+    overflow: hidden;
+    margin: auto;
+    font-family: "Comic Neue", cursive;
+    font-size: 70px;
+}
+
+.slider p {
+    color: white;
+    position: absolute;
+    top: 52%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    margin-right: -560.9px;
+}
+
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.slider-nav-btn {
+    background-color: #4CAF50;
+    border: 3px solid green;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.slider-nav-btn:hover {
+    background-color: #45a049;
+    color: azure;
+    font-size: 17px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.img1,
+.img2,
+.img3,
+.img4,
+.img5 {
+    display: inline-flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: visible;
+}
+
+.bg {
+    opacity: 0.075;
+    margin-top: -408px;
+    width: 70vw;
+}
+
+
+.img2 p,
+.img5 p {
+    position: absolute;
+    top: 62%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.img1 a,
+.img2 a,
+.img3 a,
+.img4 a,
+.img5 a {
+    color: white;
+    display: block;
+    text-align: center;
+    width: 50vw;
+    margin: 410px 0px;
+}
+
+.img1 {
+    transform: translate(90vw);
+    animation: slide1 20s ease-in-out 5s infinite;
+}
+
+.img2 {
+    transform: translate(140vw);
+    animation: slide2 20s ease-in-out 5s infinite;
+    margin-top: -140px;
+}
+
+.img3 {
+    transform: translate(80vw);
+    animation: slide3 20s ease-in-out 5s infinite;
+}
+
+.img4 {
+    transform: translate(40vw);
+    animation: slide4 20s ease-in-out 5s infinite;
+}
+
+.img5 {
+    transform: translate(-20vw);
+    animation: slide5 20s ease-in-out 5s infinite;
+    margin-top: -145px;
+}
+
+@keyframes slide1 {
+    0% {
+        transform: translate(90vw);
+    }
+
+    25% {
+        transform: translate(5vw);
+    }
+
+    50% {
+        transform: translate(5vw);
+    }
+
+    75% {
+        transform: translate(5vw);
+    }
+
+    100% {
+        transform: translate(5vw);
+    }
+}
+
+@keyframes slide2 {
+    0% {
+        transform: translate(140vw);
+    }
+
+    25% {
+        transform: translate(40vw);
+    }
+
+    50% {
+        transform: translate(-50vw);
+    }
+
+    75% {
+        transform: translate(-50vw);
+    }
+
+    100% {
+        transform: translate(-50vw);
+    }
+}
+
+@keyframes slide3 {
+    0% {
+        transform: translate(80vw);
+    }
+
+    25% {
+        transform: translate(80vw);
+    }
+
+    50% {
+        transform: translate(-10vw);
+    }
+
+    75% {
+        transform: translate(-100vw);
+    }
+
+    100% {
+        transform: translate(-100vw);
+    }
+}
+
+@keyframes slide4 {
+    0% {
+        transform: translate(40vw);
+    }
+
+    25% {
+        transform: translate(40vw);
+    }
+
+    50% {
+        transform: translate(40vw);
+    }
+
+    75% {
+        transform: translate(-60vw);
+    }
+
+    100% {
+        transform: translate(-150vw);
+    }
+}
+
+@keyframes slide5 {
+    0% {
+        transform: translate(-20vw);
+    }
+
+    25% {
+        transform: translate(-20vw);
+    }
+
+    50% {
+        transform: translate(-20vw);
+    }
+
+    75% {
+        transform: translate(-20vw);
+    }
+
+    100% {
+        transform: translate(-110vw);
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    margin: 4px 0;
+    background: rgb(109, 35, 35);
+    color: azure;
+}
+
+footer p {
+    align-content: center;
+    font-family: "Love Ya Like A Sister", cursive;
+    font-size: 20px;
+}

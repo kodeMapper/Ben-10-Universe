@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cairo+Play:wght@200..1000&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fredericka+the+Great&family=Love+Ya+Like+A+Sister&family=Poiret+One&display=swap');
+
+        body {
+            font-family: "Comic Neue", cursive;
+            background-color: #985a5a;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-align: center;
+            font-family: "Poiret One", sans-serif;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links a {
+            margin: 10px;
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #007bff;
+            font-size: 20px;
+        }
+
+        .contact-form {
+            margin-top: 30px;
+        }
+
+        .contact-form h3 {
+            font-size: 25px;
+            color: #007bff;
+            text-align: center;
+            font-family: "Poiret One", sans-serif;
+            font-weight: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="social-links">
+                <a href="https://www.gmail.com/thesaranggade" target="_blank">Email</a>
+                <a href="https://www.facebook.com/iamsaranggade/about" target="_blank">Facebook</a>
+                <a href="https://www.linkedin.com/in/sarang-gade-5a3174283/" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/iamsaranggade/?utm_source=ig_web_button_share_sheet"
+                    target="_blank">Instagram</a>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Sarang Gade. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>

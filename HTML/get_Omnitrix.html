@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Ben Got the Omnitrix</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cairo+Play:wght@200..1000&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fredericka+the+Great&family=Love+Ya+Like+A+Sister&family=Poiret+One&display=swap');
+
+        /* General Styling */
+        body {
+            background-color: #c9c7c5;
+            background-attachment: fixed;
+            font-family: 'Georgia', serif;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background image and opacity */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/images/getOmnitrix.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.3;
+            /* Control the opacity here */
+            z-index: -1;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            font-family: "Comic Neue", cursive;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #007bff;
+            color: black;
+        }
+
+        /* Section Styling */
+        section {
+            margin: 100px auto;
+            max-width: 80%;
+            padding: 60px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fade-in 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #ffcc00;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+            padding: 10px;
+            color: #ddd;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #ffffff;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+
+        section {
+            font-family: "Comic Neue", cursive;
+        }
+
+        section p {
+            font-size: 19px;
+        }
+
+        #escape-from-vilgax {
+            margin-top: 12px;
+        }
+
+        #after-getting-omnitrix {
+            margin-bottom: 220px;
+        }
+
+        /* "How It Happened" Section Styling */
+        #how-it-happened {
+            margin: 100px auto;
+            max-width: 80%;
+            padding: 40px;
+            padding-bottom: 125px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fade-in 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        #how-it-happened h2 {
+            font-size: 32px;
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #how-it-happened iframe {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #how-it-happened iframe:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animation */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #f0f0f0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 14px;
+            /* border-top: 2px solid #007bff; */
+        }
+
+        footer p {
+            margin-left: 40px;
+            font-family: "Love Ya Like A Sister", cursive;
+        }
+
+        .logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin: 0px 50px;
+        }
+
+        .omnitrix-logo {
+            border: none;
+        }
+
+        .omnitrix-logo {
+            height: 110px;
+            margin: 0 10px;
+        }
+
+        .dial {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .dial span {
+            font-family: "Comic Neue", cursive;
+            color: #24b8c8;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .dial a {
+            font-family: "Comic Neue", cursive;
+            color: #24b8c8;
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        .dial a:hover {
+            color: #FFFFFF;
+            font-size: 32px;
+        }
+
+        /* Highlight effect for the slider */
+        .highlight {
+            border: 5px solid #ffdf00;
+            animation: highlightAnimation 1s 2;
+        }
+
+        @keyframes highlightAnimation {
+            0% {
+                border-color: gold;
+            }
+
+            50% {
+                border-color: black;
+            }
+
+            100% {
+                border-color: gold;
+            }
+        }
+
+        .switch-btn {
+            background-color: transparent;
+            border: none;
+            width: 0;
+            height: 0;
+            cursor: pointer;
+        }
+
+        .left-btn {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid #28cdaf;
+            margin-right: 10px;
+        }
+
+        .right-btn {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid #28cdaf;
+            margin-left: 10px;
+        }
+
+        .switch-btn:hover {
+            border-color: #58837b;
+        }
+
+        /* Logo rotation animations */
+        @keyframes rotateRight {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(90deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes rotateLeft {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(-90deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .rotate-logo-right {
+            animation: rotateRight 0.5s forwards;
+        }
+
+        .rotate-logo-left {
+            animation: rotateLeft 0.5s forwards;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#escape-from-vilgax">Escape from Vilgax</a></li>
+            <li><a href="#ben-tennyson-gets-omnitrix">Ben Gets the Omnitrix</a></li>
+            <li><a href="#after-getting-omnitrix">After Getting Omnitrix</a></li>
+            <li><a href="#how-it-happened">Watch the Story</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="escape-from-vilgax">
+        <h2>Omnitrix Escaped from Vilgax</h2>
+        <img src="/images/vilgax's ship.jpg">
+        <p>
+            Vilgax, the fearsome intergalactic warlord, had long sought the Omnitrix, a powerful device capable of
+            transforming its wearer into various alien species. During a fierce battle, the Omnitrix was jettisoned from
+            Vilgax's ship in an escape pod to prevent him from obtaining it. The pod crash-landed on Earth, where it lay
+            dormant, awaiting its new wielder. During a fierce battle between Vilgax and Azmuth, the Omnitrix was aboard
+            Vilgax's ship. Azmuth, realizing the danger of the Omnitrix falling into Vilgax's hands, took drastic
+            measures to protect it.
+        </p>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <section id="ben-tennyson-gets-omnitrix">
+        <h2>How Ben Tennyson Got the Omnitrix</h2>
+        <img src="/images/getOmnitrix.jpg">
+        <p>
+            During a summer camping trip with his cousin Gwen and Grandpa Max, young Ben Tennyson discovered the crashed
+            pod. Curious, he approached it, and the Omnitrix attached itself to his wrist, granting him the ability to
+            transform into various powerful alien forms. Ben's life changed forever as he became the hero known as Ben
+            10. Upon touching the Omnitrix, it attached itself to Ben's wrist, forging a symbiotic bond between them.
+            This connection granted Ben the ability to transform into various alien forms, each with unique abilities
+            and strengths. Thus, Ben Tennyson became the legendary hero known as Ben 10, tasked with defending Earth
+            from extraterrestrial threats and learning valuable lessons about heroism, responsibility, and the
+            consequences of wielding such power.
+        </p>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <section id="after-getting-omnitrix">
+        <h2>What Ben Did After Getting the Omnitrix</h2>
+        <img src="/images/Hero_ben.jpg">
+        <p>
+            Armed with the Omnitrix, Ben embarked on countless adventures, fighting evil aliens, saving the world, and
+            learning valuable lessons about heroism and responsibility. From battling Vilgax and other formidable foes
+            to discovering new alien transformations, Ben's journey was filled with excitement and growth. His bravery
+            and quick thinking turned him into a true hero. The escape of the Omnitrix from Vilgax's grasp not only set
+            the stage for Ben Tennyson's heroic journey but also established the central conflict that drove much of the
+            series' narrative. It highlighted themes of power, responsibility, and the enduring struggle between good
+            and evil in a universe filled with diverse alien species and formidable adversaries like Vilgax.
+        </p>
+    </section>
+
+    <section id="how-it-happened">
+        <h2>How It Happened...</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JlqkvF5GudE" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ben 10 Fan Page. All rights reserved.</p>
+
+        <div class="logo">
+            <button class="switch-btn left-btn"></button>
+            <img src="https://media.tenor.com/mklD2ajS2SMAAAAi/omnitrix-ben-10.gif" alt="Thanking" height="200"
+                alt="Omnitrix Logo" class="omnitrix-logo">
+            <div class="dial">
+                <a id="menu-item" href="/HTML/home.html">Home</a>
+            </div>
+            <button class="switch-btn right-btn"></button>
+        </div>
+    </footer>
+
+    <audio id="click-sound1" src="/Sounds/omnitrix_click.mp3" preload="auto"></audio>
+    <audio id="click-sound2" src="/Sounds/transform.mp3" preload="auto"></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section, #video-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                observer.observe(section);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const menuItem = document.getElementById('menu-item');
+            const omnitrixLogo = document.querySelector('.omnitrix-logo');
+            const sliderSection = document.getElementById('slider-section');
+            const items = [
+                { name: 'Home', href: '/HTML/index.html' },
+                { name: 'Explore', href: '/HTML/index.html#slider-section' },
+                { name: 'About', href: '/HTML/about.html' },
+                { name: 'Contact', href: '/HTML/contact.html' }
+            ];
+            let index = 0;
+
+            // Sound effects
+            const clickSound1 = document.getElementById('click-sound1');
+            const clickSound2 = document.getElementById('click-sound2');
+
+            // Update the displayed menu item
+            function updateMenuItem(newIndex, direction) {
+                menuItem.textContent = items[newIndex].name;
+                menuItem.href = items[newIndex].href;
+
+                omnitrixLogo.classList.add(direction === 'right' ? 'rotate-logo-right' : 'rotate-logo-left');
+
+                // Play click sound
+                clickSound1.currentTime = 0;
+                clickSound1.play();
+
+                // Remove animation classes after animation ends
+                setTimeout(() => {
+                    omnitrixLogo.classList.remove('rotate-logo-right', 'rotate-logo-left');
+                }, 1000); // Match this duration with the animation duration in CSS
+            }
+
+            // Event listeners for the switch buttons
+            document.querySelector('.left-btn').addEventListener('click', () => {
+                const newIndex = (index - 1 + items.length) % items.length;
+                updateMenuItem(newIndex, 'left');
+                index = newIndex;
+            });
+
+            document.querySelector('.right-btn').addEventListener('click', () => {
+                const newIndex = (index + 1) % items.length;
+                updateMenuItem(newIndex, 'right');
+                index = newIndex;
+            });
+
+            // Scroll to slider and highlight on clicking "Explore"
+            menuItem.addEventListener('click', (event) => {
+                if (items[index].name === 'Explore') {
+                    clickSound2.currentTime = 0;
+                    clickSound2.play();
+                    event.preventDefault();
+                    window.location.href = items[index].href; // Navigate to index.html
+                    sliderSection.scrollIntoView({ behavior: 'smooth' });
+                    sliderSection.classList.add('highlight');
+                    setTimeout(() => {
+                        sliderSection.classList.remove('highlight');
+                    }, 4000); // Highlight effect duration
+                    // Delay navigation until the sound finishes playing
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, clickSound2.duration * 1000);
+                } else {
+                    // Play the second click sound and allow navigation while sound is playing
+                    event.preventDefault();
+                    clickSound2.currentTime = 0;
+                    clickSound2.play();
+                    const href = items[index].href;
+
+                    // Delay navigation until the sound finishes playing
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, clickSound2.duration * 1000);
+                }
+            });
+
+            // Initially set the menu item
+            updateMenuItem(index, 'right');
+        });
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Omnitrix</title>
+
+    <style>
+        /* General Styling */
+
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cairo+Play:wght@200..1000&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fredericka+the+Great&family=Love+Ya+Like+A+Sister&family=Poiret+One&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* General Styling */
+        body {
+            background-color: #c9c7c5;
+            background-attachment: fixed;
+            font-family: 'Georgia', serif;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background image and opacity */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/images/omnitrix bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.5;
+            /* Control the opacity here */
+            z-index: -1;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            font-family: "Comic Neue", cursive;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #007bff;
+            color: black;
+        }
+
+        /* Animation */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            margin: 100px auto;
+            max-width: 70%;
+            padding: 80px 40px 50px 50px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fade-in 1s ease-out forwards;
+        }
+
+        section p,
+        h2 {
+            font-family: "Comic Neue", cursive;
+            font-size: 20px;
+        }
+
+        #omnitrix-description {
+            margin-top: 14px;
+        }
+
+        #working-of-omnitrix {
+            padding-top: 67px;
+        }
+
+        #video-reference {
+            padding: 40px 150px 80px 150px;
+        }
+
+        #powers-of-omnitrix img {
+            height: 200px;
+        }
+
+        .vedios {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .vedios video {
+            margin-right: -90px;
+        }
+
+        .vedios iframe {
+            margin-left: -80px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            color: #ffcc00;
+            margin-bottom: 35px;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+            border: 5px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+            padding: 10px;
+            color: #ddd;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #ffffff;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #f0f0f0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 14px;
+            /* border-top: 2px solid #007bff; */
+        }
+
+        footer p {
+            margin-left: 40px;
+            font-family: "Love Ya Like A Sister", cursive;
+        }
+
+        .logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin: 0px 50px;
+        }
+
+        .logo img {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .omnitrix-logo {
+            border: none;
+        }
+
+        .omnitrix-logo {
+            height: 110px;
+            /* width: 205px; */
+            margin: 0 10px;
+        }
+
+        .dial {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .dial span {
+            font-family: "Comic Neue", cursive;
+            color: #24b8c8;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .dial a {
+            font-family: "Comic Neue", cursive;
+            color: #24b8c8;
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        .dial a:hover {
+            color: #FFFFFF;
+            font-size: 32px;
+        }
+
+        /* Highlight effect for the slider */
+        .highlight {
+            border: 5px solid #ffdf00;
+            animation: highlightAnimation 1s 2;
+        }
+
+        @keyframes highlightAnimation {
+            0% {
+                border-color: gold;
+            }
+
+            50% {
+                border-color: black;
+            }
+
+            100% {
+                border-color: gold;
+            }
+        }
+
+        .switch-btn {
+            background-color: transparent;
+            border: none;
+            width: 0;
+            height: 0;
+            cursor: pointer;
+        }
+
+        .left-btn {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid #28cdaf;
+            margin-right: 10px;
+        }
+
+        .right-btn {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid #28cdaf;
+            margin-left: 10px;
+        }
+
+        .switch-btn:hover {
+            border-color: rgb(12, 62, 12);
+        }
+
+        /* Logo rotation animations */
+        @keyframes rotateRight {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(90deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes rotateLeft {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(-90deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .rotate-logo-right {
+            animation: rotateRight 0.5s forwards;
+        }
+
+        .rotate-logo-left {
+            animation: rotateLeft 0.5s forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#omnitrix-description">Omnitrix Description</a></li>
+            <li><a href="#working-of-omnitrix">Working of Omnitrix</a></li>
+            <li><a href="#powers-of-omnitrix">Powers of Omnitrix</a></li>
+            <li><a href="#video-reference">Video Reference</a></li>
+        </ul>
+    </nav>
+
+    <section id="omnitrix-description">
+        <h2><b>Omnitrix: Connecting millions of Species</b></h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdIOwmoHuBZyXc1294cFAfX6mtJ0LiGmIU8pjeB4uhGw&s"
+            alt="The Omnitrix">
+        <p>The Omnitrix is a piece of alien technology designed by Azmuth and built by the combined efforts of him and
+            his assistant Myaxx. It allows the wearer to transform into whatever alien species whose DNA is within its
+            database. It was sent to Earth by Xylene to get it away from Vilgax and it was found by Ben Tennyson. Beyond
+            its practical applications, the Omnitrix symbolizes responsibility and the potential for growth. For Ben
+            Tennyson, its discovery and use marked a transformative journey from a regular kid to a hero capable of
+            defending Earth against various threats.</p>
+    </section>
+
+    <br>
+    <br>
+
+    <section id="working-of-omnitrix">
+        <h2>Working of the Omnitrix</h2>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d28c91ec-765b-430f-a80a-5ccfb9b8b362/dg7m1z1-9f4550ab-2e16-4f91-a29b-3551aefefffd.png/v1/fill/w_1280,h_799,q_80,strp/ben_10_in_the_real_life__the_definitive_omnitrix_by_ben10adventurestorm_dg7m1z1-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9Nzk5IiwicGF0aCI6IlwvZlwvZDI4YzkxZWMtNzY1Yi00MzBmLWE4MGEtNWNjZmI5YjhiMzYyXC9kZzdtMXoxLTlmNDU1MGFiLTJlMTYtNGY5MS1hMjliLTM1NTFhZWZlZmZmZC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.6ka0f9Rnl_a_hUIqSi7APBWEp29lJ7GoyGhSnowyLo4"
+            alt="Working of Omnitrix" height="400">
+        <p>Description: The Omnitrix from Ben 10 (OS). The Omnitrix is an incredibly powerful device which allows the
+            user the ability to transform into many different super-powered alien species. It was created by a Galvan
+            named Azmuth and it was sent to Earth when the evil warlord Vilgax wanted it for universal domination.</p>
+    </section>
+
+    <br>
+    <br>
+
+    <section id="powers-of-omnitrix">
+        <h2>Powers of the Omnitrix</h2>
+        <img src="/images/Omnitrix1.webp" alt="">
+        <p>The Omnitrix can grant its user, as well as an alien form, the ability to speak another language fluently.
+            The Omnitrix can change the user's gender to adapt to another species. The Omnitrix has Call mode which is
+            used to communicate with the user using the device. The Omnitrix contains a vast database of DNA samples
+            from numerous alien species across the galaxy. When activated, it scans and transforms the user into one of
+            these species, granting them their abilities and characteristics. In later versions, the Omnitrix gains a
+            "Master Control" feature, allowing Ben to transform at will without timing out and sometimes even switch
+            between alien forms rapidly.</p>
+    </section>
+
+    <br>
+    <br>
+
+    <section id="video-reference">
+        <h2>Video Reference:</h2>
+
+        <div class="vedios">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ICM4BZbruY0?si=OInhMMbbxnjQou8X"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <video src="/Videos/Ben10 Omnitrix __ Behance - Google Chrome 2024-06-24 18-50-40.mp4" controls=""
+                width="600px">error</video>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ben 10 Fan Page. All rights reserved.</p>
+
+        <div class="logo">
+            <button class="switch-btn left-btn"></button>
+            <img src="https://media.tenor.com/mklD2ajS2SMAAAAi/omnitrix-ben-10.gif" alt="Thanking" height="200"
+                alt="Omnitrix Logo" class="omnitrix-logo">
+            <div class="dial">
+                <a id="menu-item" href="/HTML/home.html">Home</a>
+            </div>
+            <button class="switch-btn right-btn"></button>
+        </div>
+    </footer>
+
+    <audio id="click-sound1" src="/Sounds/omnitrix_click.mp3" preload="auto"></audio>
+    <audio id="click-sound2" src="/Sounds/transform.mp3" preload="auto"></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section, #video-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                observer.observe(section);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const menuItem = document.getElementById('menu-item');
+            const omnitrixLogo = document.querySelector('.omnitrix-logo');
+            const sliderSection = document.getElementById('slider-section');
+            const items = [
+                { name: 'Home', href: '/HTML/index.html' },
+                { name: 'Explore', href: '/HTML/index.html#slider-section' },
+                { name: 'About', href: '/HTML/about.html' },
+                { name: 'Contact', href: '/HTML/contact.html' }
+            ];
+            let index = 0;
+
+            // Sound effects
+            const clickSound1 = document.getElementById('click-sound1');
+            const clickSound2 = document.getElementById('click-sound2');
+
+            // Update the displayed menu item
+            function updateMenuItem(newIndex, direction) {
+                menuItem.textContent = items[newIndex].name;
+                menuItem.href = items[newIndex].href;
+
+                omnitrixLogo.classList.add(direction === 'right' ? 'rotate-logo-right' : 'rotate-logo-left');
+
+                // Play click sound
+                clickSound1.currentTime = 0;
+                clickSound1.play();
+
+                // Remove animation classes after animation ends
+                setTimeout(() => {
+                    omnitrixLogo.classList.remove('rotate-logo-right', 'rotate-logo-left');
+                }, 1000); // Match this duration with the animation duration in CSS
+            }
+
+            // Event listeners for the switch buttons
+            document.querySelector('.left-btn').addEventListener('click', () => {
+                const newIndex = (index - 1 + items.length) % items.length;
+                updateMenuItem(newIndex, 'left');
+                index = newIndex;
+            });
+
+            document.querySelector('.right-btn').addEventListener('click', () => {
+                const newIndex = (index + 1) % items.length;
+                updateMenuItem(newIndex, 'right');
+                index = newIndex;
+            });
+
+            // Scroll to slider and highlight on clicking "Explore"
+            menuItem.addEventListener('click', (event) => {
+                if (items[index].name === 'Explore') {
+                    clickSound2.currentTime = 0;
+                    clickSound2.play();
+                    event.preventDefault();
+                    window.location.href = items[index].href; // Navigate to index.html
+                    sliderSection.scrollIntoView({ behavior: 'smooth' });
+                    sliderSection.classList.add('highlight');
+                    setTimeout(() => {
+                        sliderSection.classList.remove('highlight');
+                    }, 4000); // Highlight effect duration
+                    // Delay navigation until the sound finishes playing
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, clickSound2.duration * 1000);
+                } else {
+                    // Play the second click sound and allow navigation while sound is playing
+                    event.preventDefault();
+                    clickSound2.currentTime = 0;
+                    clickSound2.play();
+                    const href = items[index].href;
+
+                    // Delay navigation until the sound finishes playing
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, clickSound2.duration * 1000);
+                }
+            });
+
+            // Initially set the menu item
+            updateMenuItem(index, 'right');
+        });
+
+    </script>
+</body>
+
+</html>

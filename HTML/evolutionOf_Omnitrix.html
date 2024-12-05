@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolution of the Omnitrix</title>
+    <style>
+        /* General Styling */
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cairo+Play:wght@200..1000&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fredericka+the+Great&family=Love+Ya+Like+A+Sister&family=Poiret+One&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #c9c7c5;
+            background-attachment: fixed;
+            font-family: 'Georgia', serif;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/images/evo_bg.jpg");
+            background-size: contain;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            font-family: "Comic Neue", cursive;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 21px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #007bff;
+            color: black;
+        }
+
+        section {
+            margin: 100px auto;
+            max-width: 70%;
+            padding: 80px 40px 50px 50px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fade-in 1s ease-out forwards;
+        }
+
+        /* Animation */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section p,
+        h2 {
+            font-family: "Comic Neue", cursive;
+            font-size: 20px;
+        }
+
+        #omnitrix-evolution {
+            margin-top: 10px;
+        }
+
+        #alien-force,
+        #omniverse {
+            padding-bottom: 20px;
+        }
+
+        #ultimate-alien {
+            padding-bottom: 1px;
+        }
+
+        #ultimate-alien p {
+            padding-bottom: 1px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #ffcc00;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        section {
+            font-family: "Comic Neue", cursive;
+        }
+
+        section p {
+            font-size: 19px;
+        }
+
+        /* "How It Happened" Section Styling */
+        #videos {
+            margin: 100px auto;
+            max-width: 80%;
+            padding: 40px;
+            padding-bottom: 125px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fade-in 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        #videos h3 {
+            font-size: 32px;
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #videos iframe {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #videos iframe:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 50%;
+            height: auto;
+            border: 5px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+            padding: 10px;
+            color: #ddd;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #ffffff;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            text-align: end;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #f0f0f0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-left: 40px;
+            font-family: "Love Ya Like A Sister", cursive;
+        }
+
+        .logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin: 0px 35px;
+        }
+
+        .logo img {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .omnitrix-logo {
+            border: none;
+        }
+
+        .omnitrix-logo {
+            height: 110px;
+            margin: 0 10px;
+        }
+
+        .dial {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .dial span {
+            font-family: "Comic Neue", cursive;
+            color: #24b8c8;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .dial a {
+            font-family: "Comic Neue", cursive;
+            color: #24b8c8;
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        .dial a:hover {
+            color: #FFFFFF;
+            font-size: 32px;
+        }
+
+        .switch-btn {
+            background-color: transparent;
+            border: none;
+            width: 0;
+            height: 0;
+            cursor: pointer;
+        }
+
+        .left-btn {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid #28cdaf;
+            margin-right: 10px;
+        }
+
+        .right-btn {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid #28cdaf;
+            margin-left: 10px;
+        }
+
+        .switch-btn:hover {
+            border-color: #2b8273;
+        }
+
+        @keyframes rotateRight {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(90deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes rotateLeft {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(-90deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .rotate-logo-right {
+            animation: rotateRight 0.5s forwards;
+        }
+
+        .rotate-logo-left {
+            animation: rotateLeft 0.5s forwards;
+        }
+
+        .videos {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .videos iframe,
+        .videos video {
+            margin: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#ben10-classic">Classic</a></li>
+            <li><a href="#alien-force">Alien Force</a></li>
+            <li><a href="#ultimate-alien">Ultimate Alien</a></li>
+            <li><a href="#omniverse">Omniverse</a></li>
+        </ul>
+    </nav>
+
+    <section id="omnitrix-evolution">
+        <h2>Evolution of the Omnitrix</h2>
+        <img src="/images/evolutionOmnitrix.jpg" alt="Omnitrix Evolution">
+        <p>The Omnitrix, a powerful alien device, evolved significantly across different series of the *Ben 10*
+            franchise. Initially a simple watch with the ability to transform Ben Tennyson into various aliens, it
+            became more advanced in *Alien Force* with a sleeker design and new alien forms. The *Ultimate Alien* series
+            introduced the Ultimatrix, which allowed Ben to evolve aliens into their Ultimate Forms. Finally, in
+            *Omniverse*, the Omnitrix featured a touchpad interface and expanded its alien database, offering enhanced
+            functionality and security.</p>
+    </section>
+    <br>
+    <br>
+    <br>
+
+    <section id="ben10-classic">
+        <h2>Ben 10: Classic</h2>
+        <img src="/images/Omnitrix_Evo_Classic.jpg" alt="Ben 10 Classic">
+        <p>The "Ben 10: Classic" series follows the adventures of 10-year-old Ben Tennyson, who discovers the Omnitrix,
+            an alien device in a crashed pod. That allows him to transform into various powerful aliens. With his cousin
+            Gwen and Grandpa Max, Ben uses these newfound abilities to battle villains and protect the world, all while
+            learning the responsibilities that come with his powers.
+            The original Omnitrix had a simple, yet iconic design with a
+            green hourglass symbol on its face. Set against the backdrop of a cross-country summer road trip, "Ben 10:
+            Classic" blends science fiction with the everyday challenges of a young boy. As Ben masters each alien form,
+            he confronts formidable foes like Vilgax and Kevin 11, and uncovers secrets about the Omnitrix. The show
+            combines adventure and moral lessons, making it a beloved series for fans of all ages.</p>
+    </section>
+
+    <br>
+    <br>
+    <br>
+
+    <section id="alien-force">
+        <h2>Ben 10: Alien Force</h2>
+        <img src="/images/Omnitrix_evo_aleinF.jpg" alt="Alien Force">
+        <p>"Ben 10: Alien Force" is the sequel to the original "Ben 10" series. Set five years after the events of the
+            original, a teenage Ben Tennyson puts on the Omnitrix once again to protect the world. With the Omnitrix
+            recalibrated, Ben gains access to a new set of alien forms. He is joined by his cousin Gwen and former enemy
+            Kevin Levin as they combat new threats, including an alien invasion by the DNAliens and the Highbreed. This
+            series explores more mature themes, character development, and the evolving dynamics within the trio's
+            friendship and teamwork. In the Alien Force series, the Omnitrix underwent a significant redesign, becoming
+            sleeker and more advanced.
+            This version of the Omnitrix allowed Ben to access new alien forms and featured a holographic interface for
+            selecting aliens. The watch also had the ability to repair damaged DNA, making it a powerful tool in Ben's
+            fight against evil.</p>
+    </section>
+
+    <br>
+    <br>
+    <br>
+
+    <section id="ultimate-alien">
+        <h2>Ben 10: Ultimate Alien</h2>
+        <img src="/images/Omnitrix_evo_Ultimate.jpg" alt="Ultimate Alien">
+        <p>"Ben 10: Ultimate Alien" follows the adventures of a now 16-year-old Ben Tennyson, who has gained fame and
+            recognition as a hero. With a new device called the Ultimatrix, Ben can transform into even more powerful
+            alien forms called Ultimates. The series explores Ben's battles against new and old foes, the complexities
+            of fame, and the challenges of wielding the Ultimatrix's immense power. The show delves deeper into Ben's
+            character and relationships, all while introducing exciting new aliens and thrilling adventures. The
+            Ultimatrix, an upgraded version of the Omnitrix, was introduced in the Ultimate Alien series. It allowed
+            Ben to evolve his aliens into their Ultimate Forms, granting them new powers and enhanced abilities. The
+            Ultimatrix had additional features like a
+            built-in database of alien species.</p>
+    </section>
+
+    <br>
+    <br>
+    <br>
+
+    <section id="omniverse">
+        <h2>Ben 10: Omniverse</h2>
+        <img src="/images/Omnitrix_evo_Omniverse.jpg" alt="Omniverse">
+        <p>In the "Ben 10: Omniverse" series, Ben Tennyson continues his adventures as a teenager, now with a new, more
+            sophisticated Omnitrix. In the Omniverse series, the Omnitrix was once again redesigned, this time with a
+            more complex and intricate
+            appearance. The new Omnitrix featured a touchpad interface and allowed Ben to access a broader range of
+            aliens. It also included a failsafe mode to prevent unauthorized access and ensure the safety of both the
+            user and the universe. The series introduces a new animation style and storyline, focusing on Ben’s dynamic
+            relationship with his new partner, Rook Blonko, and their battles against the villains who threaten Earth
+            and the universe. </p>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <section id="videos">
+        <h3>All updates of the Omnitrix</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1sKK8hjXS84?si=R1u-KNZB63efWEu3"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ben 10 Fan Page. All rights reserved.</p>
+
+        <div class="logo">
+            <button class="switch-btn left-btn"></button>
+            <img src="https://media.tenor.com/mklD2ajS2SMAAAAi/omnitrix-ben-10.gif" alt="Thanking" height="200"
+                alt="Omnitrix Logo" class="omnitrix-logo">
+            <div class="dial">
+                <a id="menu-item" href="/HTML/home.html">Home</a>
+            </div>
+            <button class="switch-btn right-btn"></button>
+        </div>
+    </footer>
+
+    <audio id="click-sound1" src="/Sounds/omnitrix_click.mp3" preload="auto"></audio>
+    <audio id="click-sound2" src="/Sounds/transform.mp3" preload="auto"></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section, #video-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(2px)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(0px)';
+                observer.observe(section);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const menuItem = document.getElementById('menu-item');
+            const omnitrixLogo = document.querySelector('.omnitrix-logo');
+            const sliderSection = document.getElementById('slider-section');
+            const items = [
+                { name: 'Home', href: '/HTML/index.html' },
+                { name: 'Explore', href: '/HTML/index.html#slider-section' },
+                { name: 'About', href: '/HTML/about.html' },
+                { name: 'Contact', href: '/HTML/contact.html' }
+            ];
+            let index = 0;
+
+            // Sound effects
+            const clickSound1 = document.getElementById('click-sound1');
+            const clickSound2 = document.getElementById('click-sound2');
+
+            // Update the displayed menu item
+            function updateMenuItem(newIndex, direction) {
+                menuItem.textContent = items[newIndex].name;
+                menuItem.href = items[newIndex].href;
+
+                omnitrixLogo.classList.add(direction === 'right' ? 'rotate-logo-right' : 'rotate-logo-left');
+
+                // Play click sound
+                clickSound1.currentTime = 0;
+                clickSound1.play();
+
+                // Remove animation classes after animation ends
+                setTimeout(() => {
+                    omnitrixLogo.classList.remove('rotate-logo-right', 'rotate-logo-left');
+                }, 1000); // Match this duration with the animation duration in CSS
+            }
+
+            // Event listeners for the switch buttons
+            document.querySelector('.left-btn').addEventListener('click', () => {
+                const newIndex = (index - 1 + items.length) % items.length;
+                updateMenuItem(newIndex, 'left');
+                index = newIndex;
+            });
+
+            document.querySelector('.right-btn').addEventListener('click', () => {
+                const newIndex = (index + 1) % items.length;
+                updateMenuItem(newIndex, 'right');
+                index = newIndex;
+            });
+
+            // Scroll to slider and highlight on clicking "Explore"
+            menuItem.addEventListener('click', (event) => {
+                if (items[index].name === 'Explore') {
+                    clickSound2.currentTime = 0;
+                    clickSound2.play();
+                    event.preventDefault();
+                    window.location.href = items[index].href; // Navigate to index.html
+                    sliderSection.scrollIntoView({ behavior: 'smooth' });
+                    sliderSection.classList.add('highlight');
+                    setTimeout(() => {
+                        sliderSection.classList.remove('highlight');
+                    }, 4000); // Highlight effect duration
+                    // Delay navigation until the sound finishes playing
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, clickSound2.duration * 1000);
+                } else {
+                    // Play the second click sound and allow navigation while sound is playing
+                    event.preventDefault();
+                    clickSound2.currentTime = 0;
+                    clickSound2.play();
+                    const href = items[index].href;
+
+                    // Delay navigation until the sound finishes playing
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, clickSound2.duration * 1000);
+                }
+            });
+
+            // Initially set the menu item
+            updateMenuItem(index, 'right');
+        });
+
+    </script>
+</body>
+
+</html>
