@@ -28,7 +28,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("/images/getOmnitrix.jpg");
+            background-image: url("../images/getOmnitrix.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -356,6 +356,7 @@
             scroll-behavior: smooth;
         }
     </style>
+    <link rel="stylesheet" href="../CSS/shared.css">
 </head>
 
 <body>
@@ -371,7 +372,7 @@
 
     <section id="escape-from-vilgax">
         <h2>Omnitrix Escaped from Vilgax</h2>
-        <img src="/images/vilgax's ship.jpg">
+        <img src="../images/vilgax's ship.jpg">
         <p>
             Vilgax, the fearsome intergalactic warlord, had long sought the Omnitrix, a powerful device capable of
             transforming its wearer into various alien species. During a fierce battle, the Omnitrix was jettisoned from
@@ -387,7 +388,7 @@
     <br>
     <section id="ben-tennyson-gets-omnitrix">
         <h2>How Ben Tennyson Got the Omnitrix</h2>
-        <img src="/images/getOmnitrix.jpg">
+        <img src="../images/getOmnitrix.jpg">
         <p>
             During a summer camping trip with his cousin Gwen and Grandpa Max, young Ben Tennyson discovered the crashed
             pod. Curious, he approached it, and the Omnitrix attached itself to his wrist, granting him the ability to
@@ -405,7 +406,7 @@
     <br>
     <section id="after-getting-omnitrix">
         <h2>What Ben Did After Getting the Omnitrix</h2>
-        <img src="/images/Hero_ben.jpg">
+        <img src="../images/Hero_ben.jpg">
         <p>
             Armed with the Omnitrix, Ben embarked on countless adventures, fighting evil aliens, saving the world, and
             learning valuable lessons about heroism and responsibility. From battling Vilgax and other formidable foes
@@ -429,121 +430,23 @@
         <p>&copy; 2024 Ben 10 Fan Page. All rights reserved.</p>
 
         <div class="logo">
-            <button class="switch-btn left-btn"></button>
+            <button class="switch-btn left-btn" type="button" aria-label="Previous menu item"></button>
             <img src="https://media.tenor.com/mklD2ajS2SMAAAAi/omnitrix-ben-10.gif" alt="Thanking" height="200"
                 alt="Omnitrix Logo" class="omnitrix-logo">
             <div class="dial">
-                <a id="menu-item" href="/HTML/home.html">Home</a>
+                <a id="menu-item" href="../index.html">Home</a>
             </div>
-            <button class="switch-btn right-btn"></button>
+            <button class="switch-btn right-btn" type="button" aria-label="Next menu item"></button>
         </div>
     </footer>
 
-    <audio id="click-sound1" src="/Sounds/omnitrix_click.mp3" preload="auto"></audio>
-    <audio id="click-sound2" src="/Sounds/transform.mp3" preload="auto"></audio>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section, #video-section');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            sections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                observer.observe(section);
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const menuItem = document.getElementById('menu-item');
-            const omnitrixLogo = document.querySelector('.omnitrix-logo');
-            const sliderSection = document.getElementById('slider-section');
-            const items = [
-                { name: 'Home', href: '/HTML/index.html' },
-                { name: 'Explore', href: '/HTML/index.html#slider-section' },
-                { name: 'About', href: '/HTML/about.html' },
-                { name: 'Contact', href: '/HTML/contact.html' }
-            ];
-            let index = 0;
-
-            // Sound effects
-            const clickSound1 = document.getElementById('click-sound1');
-            const clickSound2 = document.getElementById('click-sound2');
-
-            // Update the displayed menu item
-            function updateMenuItem(newIndex, direction) {
-                menuItem.textContent = items[newIndex].name;
-                menuItem.href = items[newIndex].href;
-
-                omnitrixLogo.classList.add(direction === 'right' ? 'rotate-logo-right' : 'rotate-logo-left');
-
-                // Play click sound
-                clickSound1.currentTime = 0;
-                clickSound1.play();
-
-                // Remove animation classes after animation ends
-                setTimeout(() => {
-                    omnitrixLogo.classList.remove('rotate-logo-right', 'rotate-logo-left');
-                }, 1000); // Match this duration with the animation duration in CSS
-            }
-
-            // Event listeners for the switch buttons
-            document.querySelector('.left-btn').addEventListener('click', () => {
-                const newIndex = (index - 1 + items.length) % items.length;
-                updateMenuItem(newIndex, 'left');
-                index = newIndex;
-            });
-
-            document.querySelector('.right-btn').addEventListener('click', () => {
-                const newIndex = (index + 1) % items.length;
-                updateMenuItem(newIndex, 'right');
-                index = newIndex;
-            });
-
-            // Scroll to slider and highlight on clicking "Explore"
-            menuItem.addEventListener('click', (event) => {
-                if (items[index].name === 'Explore') {
-                    clickSound2.currentTime = 0;
-                    clickSound2.play();
-                    event.preventDefault();
-                    window.location.href = items[index].href; // Navigate to index.html
-                    sliderSection.scrollIntoView({ behavior: 'smooth' });
-                    sliderSection.classList.add('highlight');
-                    setTimeout(() => {
-                        sliderSection.classList.remove('highlight');
-                    }, 4000); // Highlight effect duration
-                    // Delay navigation until the sound finishes playing
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, clickSound2.duration * 1000);
-                } else {
-                    // Play the second click sound and allow navigation while sound is playing
-                    event.preventDefault();
-                    clickSound2.currentTime = 0;
-                    clickSound2.play();
-                    const href = items[index].href;
-
-                    // Delay navigation until the sound finishes playing
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, clickSound2.duration * 1000);
-                }
-            });
-
-            // Initially set the menu item
-            updateMenuItem(index, 'right');
-        });
-
-    </script>
+    <audio id="click-sound1" src="../Sounds/omnitrix_click.mp3" preload="auto"></audio>
+    <audio id="click-sound2" src="../Sounds/transform.mp3" preload="auto"></audio>
 
 
+
+
+<script src="../JS/script.js" defer></script>
 </body>
 
 </html>

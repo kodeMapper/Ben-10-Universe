@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ben 10</title>
-    <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="stylesheet" href="/CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/shared.css">
 </head>
 <body>
     <div class="bodyContainer">
         <header>
             <h1>BEN 10 UNIVERSE</h1>
             <div class="logo">
-                <button class="switch-btn left-btn"></button>
+                <button class="switch-btn left-btn" type="button" aria-label="Previous menu item"></button>
                 <img src="https://media.tenor.com/mklD2ajS2SMAAAAi/omnitrix-ben-10.gif" alt="Thanking" height="200" class="omnitrix-logo">
                 <div class="dial">
-                    <a id="menu-item" href="/home.html">Home</a>
+                    <a id="menu-item" href="index.html">Home</a>
                 </div>
-                <button class="switch-btn right-btn"></button>
+                <button class="switch-btn right-btn" type="button" aria-label="Next menu item"></button>
             </div>
         </header>
 
         <main>
             <div class="homeContainer">
-                <img src="/images/ben-10-alien-force_wallpaper.jpg" alt="Ben 10">
+                <img src="images/homeWallpaper-transparent.png" alt="Ben 10">
                 <br>
                 <div class="introContainer">
                     <h2><b>Introduction:</b></h2>
@@ -39,23 +42,23 @@
                 <div class="slider">
                     <div class="img1">
                         <p>How Ben got the Omnitrix</p>
-                        <a href="/HTML/get_Omnitrix.html"><img class="bg" src="/images/getOmnitrix.jpg" width="40vh" alt=""></a>
+                        <a href="HTML/get_Omnitrix.html"><img class="bg" src="images/getOmnitrix.jpg" width="40vh" alt=""></a>
                     </div>
                     <div class="img2">
                         <p>The Omnitrix</p>
-                        <a href="/HTML/workingOf_Omnitrix.html"><img class="bg" src="/images/Working.jpg" width="40vh" alt=""></a>
+                        <a href="HTML/workingOf_Omnitrix.html"><img class="bg" src="images/Working.jpg" width="40vh" alt=""></a>
                     </div>
                     <div class="img3">
                         <p>Alien Transformations</p>
-                        <a href="/HTML/canTransform.html"><img class="bg" src="/images/Ben10_classic_wallpaper.jpg" width="40vh" alt=""></a>
+                        <a href="HTML/canTransform.html"><img class="bg" src="images/Ben10_classic_wallpaper.jpg" width="40vh" alt=""></a>
                     </div>
                     <div class="img4">
                         <p>Evolution of Omnitrix</p>
-                        <a href="/HTML/evolutionOf_Omnitrix.html"><img class="bg" src="/images/evolutionOmnitrix.jpg" width="40vh" alt=""></a>
+                        <a href="HTML/evolutionOf_Omnitrix.html"><img class="bg" src="images/evolutionOmnitrix.jpg" width="40vh" alt=""></a>
                     </div>
                     <div class="img5">
                         <p>Villains in the Ben 10 Universe</p>
-                        <a href="/HTML/villans.html"><img class="bg" src="/images/villans.jpg" width="40vh" alt=""></a>
+                        <a href="HTML/villans.html"><img class="bg" src="images/villans.jpg" width="40vh" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -73,9 +76,10 @@
         </footer>
     </div>
 
-    <audio id="click-sound1" src="/Sounds/omnitrix_click.mp3" preload="auto"></audio>
-    <audio id="click-sound2" src="/Sounds/transform.mp3" preload="auto"></audio>
+    <audio id="click-sound1" src="Sounds/omnitrix_click.mp3" preload="auto"></audio>
+    <audio id="click-sound2" src="Sounds/transform.mp3" preload="auto"></audio>
 
-    <script src="/JS/script.js"></script>
+
+<script src="JS/script.js" defer></script>
 </body>
 </html>
