@@ -41,6 +41,8 @@ footer .logo { margin: 0 20px; }
 .slider-wrapper > .alien-card, .slider-wrapper > .villain-card { width: 100%; min-width: 0; margin: 0 0 20px; }
 .slider-wrapper > [id] { margin-left: 0; }
 .alien-card img, .villain-card img { max-width: 100%; width: auto; height: clamp(200px, 40vw, 400px); object-fit: contain; }
+.villain-slide-control { justify-content: center; width: max-content; margin: 20px auto 0; }
+#villains > #switcher { margin: 20px auto 0; }
 .carousel-ready { touch-action: pan-y; }
 .container { width: min(840px, calc(100% - 32px)); }
 .contact-form input, .contact-form textarea { max-width: 100%; font-size: 16px; }
