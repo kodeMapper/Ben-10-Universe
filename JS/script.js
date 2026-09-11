@@ -180,7 +180,10 @@ document.querySelectorAll('.slider, .slider-wrapper').forEach((track, carouselIn
         start = null;
         if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
             swiped = true;
-            show(current + (dx < 0 ? 1 : -1));
+            const direction = dx < 0 ? 'right' : 'left';
+            rotateOmnitrix(slideOmnitrix, direction);
+            show(current + (direction === 'right' ? 1 : -1));
+            playSound('click-sound1');
         }
     });
     track.addEventListener('pointercancel', () => { start = null; });
